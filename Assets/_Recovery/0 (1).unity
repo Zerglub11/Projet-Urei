@@ -746,13 +746,13 @@ MonoBehaviour:
   moveSpeed: 250
   sprintSpeed: 0
   jumpForce: 300
-  isGrounded: 0
-  groundCheckLeft: {fileID: 2134247180}
-  groundCheckRight: {fileID: 1152571359}
-  isJumping: 0
+  m_MovementSmoothing: 0.05
   rb: {fileID: 870166131}
   animator: {fileID: 870166134}
   spriteRenderer: {fileID: 870166128}
+  groundCheckLeft: {fileID: 2134247180}
+  groundCheckRight: {fileID: 1152571359}
+  isGrounded: 0
 --- !u!212 &870166128
 SpriteRenderer:
   serializedVersion: 2
