@@ -129,7 +129,6 @@ GameObject:
   m_Component:
   - component: {fileID: 69456978}
   - component: {fileID: 69456980}
-  - component: {fileID: 69456979}
   - component: {fileID: 69456981}
   m_Layer: 5
   m_Name: Deku
@@ -157,33 +156,6 @@ RectTransform:
   m_AnchoredPosition: {x: -439.38672, y: -214.46706}
   m_SizeDelta: {x: 20.3791, y: 9.9361}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &69456979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 69456977}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Texture: {fileID: 0}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
 --- !u!222 &69456980
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -200,7 +172,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69456977}
   m_Enabled: 1
-  m_VideoClip: {fileID: 0}
+  m_VideoClip: {fileID: 32900000, guid: c67b0d36a43199744bb21b2b9f76cb51, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 519420031}
@@ -2917,7 +2889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeclencheurCinematique
   lecteurVideo: {fileID: 942596439}
-  ecranDAffichage: {fileID: 942596440}
+  ecranDAffichage: {fileID: 0}
   interfaceJeu: {fileID: 0}
 --- !u!61 &363725191
 BoxCollider2D:
@@ -3538,7 +3510,6 @@ GameObject:
   m_Component:
   - component: {fileID: 942596438}
   - component: {fileID: 942596441}
-  - component: {fileID: 942596440}
   - component: {fileID: 942596439}
   m_Layer: 5
   m_Name: Urei
@@ -3602,33 +3573,6 @@ VideoPlayer:
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
---- !u!114 &942596440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 942596437}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Texture: {fileID: 0}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
 --- !u!222 &942596441
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3976,7 +3920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeclencheurCinematique
   lecteurVideo: {fileID: 69456981}
-  ecranDAffichage: {fileID: 69456979}
+  ecranDAffichage: {fileID: 0}
   interfaceJeu: {fileID: 0}
 --- !u!61 &1579348030
 BoxCollider2D:
