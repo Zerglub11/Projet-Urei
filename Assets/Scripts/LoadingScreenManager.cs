@@ -1,11 +1,18 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class LoadingScreenManager : MonoBehaviour
 {
-    [SerializeField] private float minimumLoadingTime = 3f; // Durée minimale en secondes
-    [SerializeField] private string gameSceneName = "GameScene"; // Nom de ta scène de jeu
+    [Header("Scène")]
+    [SerializeField] private string gameSceneName = "GameScene"; // ← Nom de ta scène de destination
+    [SerializeField] private float minimumLoadingTime = 3f;
+
+    [Header("UI")]
+    [SerializeField] private Image loadingBarFill;
+    [SerializeField] private TextMeshProUGUI percentText;
 
     void Start()
     {
@@ -16,20 +23,31 @@ public class LoadingScreenManager : MonoBehaviour
     {
         float elapsedTime = 0f;
 
-        // Lance le chargement en arrière-plan SANS activer la scène automatiquement
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(gameSceneName);
         asyncLoad.allowSceneActivation = false;
 
-        // Attend que les deux conditions soient remplies :
-        // 1. Le temps minimum est écoulé
-        // 2. La scène est prête (progress >= 0.9f)
         while (elapsedTime < minimumLoadingTime || asyncLoad.progress < 0.9f)
         {
             elapsedTime += Time.deltaTime;
+
+            // Progression combinée : temps + chargement réel
+            float timeProgress = elapsedTime / minimumLoadingTime;
+            float loadProgress = Mathf.Clamp01(asyncLoad.progress / 0.9f);
+            float displayedProgress = Mathf.Min(timeProgress, loadProgress); // Le plus lent des deux
+            displayedProgress = Mathf.Clamp01(displayedProgress);
+
+            // Met à jour l'UI
+            loadingBarFill.fillAmount = displayedProgress;
+            percentText.text = Mathf.RoundToInt(displayedProgress * 100f) + "%";
+
             yield return null;
         }
 
-        // Active la scène une fois les conditions remplies
+        // S'assure que la barre est bien à 100% avant de switcher
+        loadingBarFill.fillAmount = 1f;
+        percentText.text = "100%";
+        yield return new WaitForSeconds(0.2f);
+
         asyncLoad.allowSceneActivation = true;
     }
 }
