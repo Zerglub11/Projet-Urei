@@ -2870,7 +2870,7 @@ GameObject:
   - component: {fileID: 363725191}
   - component: {fileID: 363725190}
   m_Layer: 0
-  m_Name: Purple
+  m_Name: Urei
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
